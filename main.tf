@@ -56,7 +56,7 @@ provider "azurerm" {
  }
 
  resource "azurerm_availability_set" "avset" {
-   name                         = "avset-typesense"
+   name                         = ""
    location                     = data.azurerm_resource_group.vm.location
    resource_group_name          = data.azurerm_resource_group.vm.name
    platform_fault_domain_count  = 2
@@ -86,7 +86,7 @@ provider "azurerm" {
    storage_image_reference {
      publisher = "Canonical"
      offer     = "UbuntuServer"
-     sku       = "20.04-LTS"
+     sku       = "22.04-LTS"
      version   = "latest"
    }
 
