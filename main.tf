@@ -35,7 +35,7 @@ provider "azurerm" {
  }
 
  resource "azurerm_network_interface" "vm" {   
-   name                = "typesense-search${count.index}"
+   name                = "${count.index}"
    location            = data.azurerm_resource_group.vm.location
    resource_group_name = data.azurerm_resource_group.vm.name
 
@@ -47,12 +47,12 @@ provider "azurerm" {
  }
 
  resource "azurerm_managed_disk" "vm" {   
-   name                 = "typesense-search${count.index}"
+   name                 = "${count.index}"
    location             = data.azurerm_resource_group.vm.location
    resource_group_name  = data.azurerm_resource_group.vm.name
-   storage_account_type = "StandardSSD_LRS"
-   create_option        = "Empty"
-   disk_size_gb         = "32"
+   storage_account_type = ""
+   create_option        = ""
+   disk_size_gb         = ""
  }
 
  resource "azurerm_availability_set" "avset" {
@@ -70,7 +70,7 @@ provider "azurerm" {
  }
 
  resource "azurerm_virtual_machine" "vm" {   
-   name                  = "typesense-search-dev${count.index}"
+   name                  = "${count.index}"
    location              = data.azurerm_resource_group.vm.location
    availability_set_id   = azurerm_availability_set.avset.id
    resource_group_name   = data.azurerm_resource_group.vm.name
@@ -91,7 +91,7 @@ provider "azurerm" {
    }
 
    storage_os_disk {
-     name              = "typesense-search${count.index}"
+     name              = "${count.index}"
      caching           = "ReadWrite"
      create_option     = "FromImage"
      managed_disk_type = "StandardSSD_LRS"
@@ -108,8 +108,8 @@ provider "azurerm" {
 
    os_profile {
      computer_name  = "hostname"
-     admin_username = "ifc_cloud_3"
-     admin_password = "88rB!@#MmJRHAtag4556#"
+     admin_username = ""
+     admin_password = ""
    }
 
    os_profile_linux_config {
@@ -117,10 +117,10 @@ provider "azurerm" {
    }
 
    tags = {
-     env = "dev"
-     business_unit = "b2c"
-     client = "infrashop_saas"
-     product = "infrashopsaas"
-     vertical = "infrashop"
+     env = ""
+     business_unit = ""
+     client = ""
+     product = ""
+     vertical = ""
    }
  }
