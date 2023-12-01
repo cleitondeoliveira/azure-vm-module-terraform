@@ -8,41 +8,35 @@ variable "client_secret" {
   default = ""
 }
 variable "tenant_id" {
-  default = "81de5c69-22d5-4385-a4ab-c66da019ba52"
+  default = ""
 }
 
 variable "location" {
   default = "East US"
 }
 variable "name" {
-  default = "ksql"
+  default = ""
 }
 variable "vnet_rg" {
-  default = "rg-network-dev"
+  default = ""
 }
 variable "vnet" {
-  default = "vNetDefault"
+  default = ""
 }
 variable "rg-name" {
-  default = "rg-search-dev"
+  default = ""
 }
 variable "sub-name" {
-  default = "subNetVMs"
+  default = ""
 }
 
 variable "sub-id" {
-  default = "/subscriptions/9b80411a-6b86-4903-b3c3-6de38998eeea/resourceGroups/rg-network-dev/providers/Microsoft.Network/virtualNetworks/vNetDefault/subnets/subNetVMs"
+  default = "/subscriptions//resourceGroups//providers/Microsoft.Network/virtualNetworks//subnets/"
 }
-# variable "tags" {
-#   type = map
-#   default = {
-#     "Environment" = "prd"
-#     "Project" = "cxaas"
-#   }
-# }
+
 variable "dns_zone" {
-  default = "typesense.ifcshopdev.net"
+  default = ""
 }
 variable "ksqldb" {
-  default = ["172.27.6.7", "172.27.6.8", "172.27.6.9"]
+  default = [""]
 }
