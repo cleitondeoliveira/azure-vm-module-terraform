@@ -64,11 +64,6 @@ provider "azurerm" {
    managed                      = true
  }
 
- resource "azurerm_virtual_network_dns_servers" "vm" {
-   virtual_network_id = var.dns_zone
-   dns_servers        = var.ksqldb
- }
-
  resource "azurerm_virtual_machine" "vm" {   
    name                  = "${count.index}"
    location              = data.azurerm_resource_group.vm.location
