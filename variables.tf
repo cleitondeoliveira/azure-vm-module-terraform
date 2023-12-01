@@ -37,6 +37,3 @@ variable "sub-id" {
 variable "dns_zone" {
   default = ""
 }
-variable "ksqldb" {
-  default = [""]
-}
